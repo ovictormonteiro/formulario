@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="formulario.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <title>Formulário</title>
+</head>
+<body>  
+  <div id="fomulario">
+    <h1 class="title">Formulário</h1>
+    <form>      
+      <input type="text" placeholder="Seu email" class="inputEmail">
+      <div class="alerta">Precisa ser um email real</div>
+      <input type="password" placeholder="Senha" class="inputSenha">
+      <div>
+        <p class="letrasMaiusculas">Letras maiúsculas <span class="emoji">😭</span></p>
+        <p class="letrasMinusculas">Letras Minúsculas <span class="emoji">😭</span></p>
+        <p class="caracteresEspeciais">Caracteres Especiais <span class="emoji">😭</span></p>
+        <p class="Numeros">Números <span class="emoji">😭</span></p>
+        <p class="Tamanho">Maior que 8 caracteres <span class="emoji">😭</span></p>
+      </div>
+      <div class="alerta">Senha precisa ser compatível</div>
+      <button><p>Fazer Login</p></button>
+      <p class="alerta sucesso">Deu certo!</p>
+    </form>
+  </div>
+  <script src="formulario.js"></script>
+</body>
+</html>
