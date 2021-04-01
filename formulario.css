@@ -32,7 +32,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
+  padding-top: 2rem;
 }
 
 form{
@@ -186,4 +186,15 @@ form > div > p > span{
   animation: ativo 1s ease-in-out forwards;
   -webkit-animation: ativo 1s ease-in-out forwards;
   -moz-animation: ativo 1s ease-in-out forwards;
+}
+
+@media (max-width: 767px) {
+  html{
+    font-size: 85%;
+  }
+
+  #fomulario{
+    max-width: 360px;
+    width: 90%;
+  }
 }
