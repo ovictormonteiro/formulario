@@ -61,7 +61,7 @@ button{
   border: none;
   position: relative;  
   background: linear-gradient(45deg, transparent 0%, #b0fd21 100%) !important;
-  overflow-x: hidden;
+  overflow: hidden;
   color: #e3e7e1;
 }
 button p{
