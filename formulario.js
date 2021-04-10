@@ -7,8 +7,8 @@ const senha = encurtador('.inputSenha');
 let senhaConfere = false;
 let emailConfere = false;
 formulario.addEventListener('submit',(e)=>{
-  e.preventDefault();
-  if(emailConfere){
+  e.preventDefault();  
+  if(emailConfere){         
     if(senhaConfere){
       encurtador('.alerta.sucesso').classList.add('ativo');
     } else {
@@ -20,6 +20,7 @@ formulario.addEventListener('submit',(e)=>{
       },3000)
     }
   } else {
+    senhaConfere = false;
     email.nextElementSibling.classList.remove('inativo');
     email.nextElementSibling.classList.add('ativo');
     setTimeout(()=>{
@@ -35,7 +36,9 @@ function confereEmail(){
   email.addEventListener('keyup',()=>{
     if(regexEmail.test(email.value)){
       return emailConfere = true;    
-    } 
+    } else {      
+      return emailConfere = false;      
+    }
   })
 }
 confereEmail();
@@ -81,12 +84,11 @@ function confereSenha(){
     } else {
       encurtador('.Tamanho span').innerHTML = '😭';
     }
-    
-
-    console.log(confTa);
     // ====Conferência final====
     if((confLMA && confCE && confLMI && confNum && confTa) === true){
       senhaConfere = true;
+    } else {
+      senhaConfere = false;
     }
   })
 }
