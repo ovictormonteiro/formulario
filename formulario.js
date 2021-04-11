@@ -35,25 +35,36 @@ function confereEmail(){
   if(emailConfere === false){
     senha.disabled = true;    
   }
-  email.addEventListener('keyup',()=>{
-    if(emailConfere === false){
-      senha.disabled = true;
-    } else {
-      senha.disabled = false;
-      senha.placeholder = "Senha";
-    }
-    if(regexEmail.test(email.value)){
-      return emailConfere = true;    
-    } else {      
-      return emailConfere = false;      
-    }
+  observer.observe(email,{
+    attributes: true,
+    childList: true,
+    subtree: true
   })
 }
+
+let observer = new MutationObserver((mutation)=>{  
+  mutation.forEach((mutacao)=>{ 
+    mutacao.target.addEventListener('keyup',()=>{  
+      if(emailConfere === false){
+        senha.disabled = true;
+      } else if(emailConfere === true && email.value !== '' && email.value !== null) {
+        senha.disabled = false;
+        senha.placeholder = "Senha";
+      }            
+      if(regexEmail.test(mutacao.target.value)){
+        return emailConfere = true;
+      } else {
+        return emailConfere = false;
+      }
+    })
+  })
+})
+
 confereEmail();
 
 function confereSenha(){
    // ====Campo da Senha====  
-  senha.addEventListener('keyup',(e)=>{
+  senha.addEventListener('keyup',(e)=>{  
     // ====Regex====
     const regNum = /[0-9]/;
     const regCE = /[\@\ \#\!]/;
