@@ -191,9 +191,11 @@ form > div > p > span{
 }
 
 [disabled]{
-  background: rgb(231, 42, 42);
-  color: #fff;
+  background: rgb(231, 42, 42);  
   border: none;
+}
+[disabled]::placeholder{
+  color: #fff;
 }
 
 @media (max-width: 767px) {
