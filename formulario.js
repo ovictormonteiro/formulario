@@ -33,13 +33,11 @@ formulario.addEventListener('submit',(e)=>{
 
 function confereEmail(){
   if(emailConfere === false){
-    senha.disabled = true;
-    senha.placeholder = "Coloque um email válido"
+    senha.disabled = true;    
   }
   email.addEventListener('keyup',()=>{
     if(emailConfere === false){
       senha.disabled = true;
-      senha.placeholder = "Coloque um email válido"
     } else {
       senha.disabled = false;
       senha.placeholder = "Senha";
