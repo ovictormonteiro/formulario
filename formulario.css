@@ -190,6 +190,12 @@ form > div > p > span{
   -moz-animation: ativo 1s ease-in-out forwards;
 }
 
+[disabled]{
+  background: rgb(231, 42, 42);
+  color: #fff;
+  border: none;
+}
+
 @media (max-width: 767px) {
   html{
     font-size: 85%;

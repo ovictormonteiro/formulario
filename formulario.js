@@ -31,9 +31,15 @@ formulario.addEventListener('submit',(e)=>{
 })
 
 
-
 function confereEmail(){
   email.addEventListener('keyup',()=>{
+    if(emailConfere === false){
+      senha.disabled = true;
+      senha.placeholder = "Coloque um email válido"
+    } else {
+      senha.disabled = false;
+      senha.placeholder = "Senha";
+    }
     if(regexEmail.test(email.value)){
       return emailConfere = true;    
     } else {      
